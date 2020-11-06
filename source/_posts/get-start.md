@@ -18,6 +18,8 @@ tags:
 $ npm install
 ```
 
+<!-- More -->
+
 ## 写作
 
 hexo 的规则参考 [官网 doc](https://hexo.io/zh-cn/docs/writing)
