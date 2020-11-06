@@ -30,7 +30,7 @@ javascript 代码：
 ```javascript
 let a = 6;
 function b() {
-    console.log("Hello world");
+    console.log("Hello world"); // 中文注释
 }
 ```
 
