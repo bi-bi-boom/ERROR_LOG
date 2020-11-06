@@ -51,6 +51,7 @@ favicon:
 language_switcher: false
 
 footer:
+  counter: true
   # Specify the date when the site was setup. If not defined, current year will be used.
   #since: 2015
 
@@ -711,7 +712,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: fa fa-user
   total_views: true
