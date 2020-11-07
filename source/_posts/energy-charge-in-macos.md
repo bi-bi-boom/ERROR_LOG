@@ -1,5 +1,5 @@
 ---
-title: Energy_Charge in macOS
+title: 如何在没接触过 macOS 开发的情况下 4 个小时写一个学校爬电费状态栏 App
 date: 2019-12-08
 updated: 2020-05-23 00:35
 categories: macOS
