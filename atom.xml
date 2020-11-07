@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-11-07T15:38:26.921Z</updated>
+  <updated>2020-11-07T16:42:22.025Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,15 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>zzx</title>
-    <link href="http://example.com/2020/11/07/zzx/"/>
-    <id>http://example.com/2020/11/07/zzx/</id>
-    <published>2020-11-07T15:38:26.000Z</published>
-    <updated>2020-11-07T15:38:26.921Z</updated>
+    <title>Kivy Fistly Set</title>
+    <link href="http://example.com/2020/11/08/Kivy-Fistly-Set/"/>
+    <id>http://example.com/2020/11/08/Kivy-Fistly-Set/</id>
+    <published>2020-11-07T16:32:30.000Z</published>
+    <updated>2020-11-07T16:42:22.025Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="kivy"><a href="#kivy" class="headerlink" title="kivy"></a>kivy</h1><ul><li>kivy是一个基于python的app开发框架</li><li>首先，演示一下在win10环境下配置kivy</li></ul><p>1.直接pip install kivy</p><ul><li><p>自己写个mian.py作为测试</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> kivy.app <span class="keyword">import</span> App</span><br><span class="line"><span class="keyword">from</span> kivy.uix.label <span class="keyword">import</span> Label</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainApp</span>(<span class="params">App</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">build</span>(<span class="params">self</span>):</span></span><br><span class="line">        label = Label(text=<span class="string">&#x27;Hello from Kivy&#x27;</span>,</span><br><span class="line">                      size_hint=(<span class="number">.5</span>, <span class="number">.5</span>),</span><br><span class="line">                      pos_hint=&#123;<span class="string">&#x27;center_x&#x27;</span>: <span class="number">.5</span>, <span class="string">&#x27;center_y&#x27;</span>: <span class="number">.5</span>&#125;)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> label</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = MainApp()</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure></li><li><p>如果遇到问题 [CRITICAL] [App         ] Unable to get a Text provider, abort.<br>则terminal执行下列语句（可能需要梯子）</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgraade pip wheel setuptools</span><br><span class="line">pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew</span><br><span class="line">pip install kivy.deps.gstreamer</span><br><span class="line">pip install kivy.deps.angle</span><br><span class="line">pip install --upgrade kivy</span><br></pre></td></tr></table></figure></li></ul><p>2.运行之后可以看见下图，说明成功</p><h2 id=""><a href="#" class="headerlink" title=""></a><img src="img/kivySuccess.png" alt="avatar"></h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;kivy&quot;&gt;&lt;a href=&quot;#kivy&quot; class=&quot;headerlink&quot; title=&quot;kivy&quot;&gt;&lt;/a&gt;kivy&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;kivy是一个基于python的app开发框架&lt;/li&gt;
+&lt;li&gt;首先，演示一下在win10环境下配置kivy&lt;</summary>
+      
     
     
     
+    <category term="Kivy" scheme="http://example.com/categories/Kivy/"/>
     
+    
+    <category term="zanxinz" scheme="http://example.com/tags/zanxinz/"/>
     
   </entry>
   
