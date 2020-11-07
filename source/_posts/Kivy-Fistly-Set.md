@@ -29,6 +29,7 @@ if __name__ == '__main__':
     app = MainApp()
     app.run()
 ```
+<!-- More -->
 
 - 如果遇到问题 [CRITICAL] [App         ] Unable to get a Text provider, abort.
 则terminal执行下列语句（可能需要梯子）
@@ -39,8 +40,7 @@ pip install kivy.deps.gstreamer
 pip install kivy.deps.angle
 pip install --upgrade kivy
 ```
-
 2.运行之后可以看见下图，说明成功
 ## {% asset_img kivySuccess.png %}
 
-<!-- More -->
+
