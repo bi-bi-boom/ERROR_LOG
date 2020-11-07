@@ -31,7 +31,10 @@ if __name__ == '__main__':
 ```
 <!-- More -->
 
-- 如果遇到问题 [CRITICAL] [App         ] Unable to get a Text provider, abort.
+- 如果遇到问题 
+```
+[CRITICAL] [App         ] Unable to get a Text provider, abort.
+```
 则terminal执行下列语句（可能需要梯子）
 ```c
 pip install --upgraade pip wheel setuptools
