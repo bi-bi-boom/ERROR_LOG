@@ -41,4 +41,4 @@ pip install --upgrade kivy
 ```
 
 2.运行之后可以看见下图，说明成功
-## {% asset_img img/kivySuccess.png %}
+## {% asset_img kivySuccess.png %}
