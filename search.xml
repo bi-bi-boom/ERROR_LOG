@@ -1,40 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Kivy Fistly Set</title>
-    <url>/2020/11/08/Kivy-Fistly-Set/</url>
-    <content><![CDATA[<h1 id="kivy"><a href="#kivy" class="headerlink" title="kivy"></a>kivy</h1><ul>
-<li>kivy是一个基于python的app开发框架</li>
-<li>首先，演示一下在win10环境下配置kivy</li>
-</ul>
-<p>1.直接pip install kivy</p>
-<ul>
-<li>自己写个mian.py作为测试</li>
-</ul>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> kivy.app <span class="keyword">import</span> App</span><br><span class="line"><span class="keyword">from</span> kivy.uix.label <span class="keyword">import</span> Label</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainApp</span>(<span class="params">App</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">build</span>(<span class="params">self</span>):</span></span><br><span class="line">        label = Label(text=<span class="string">&#x27;Hello from Kivy&#x27;</span>,</span><br><span class="line">                      size_hint=(<span class="number">.5</span>, <span class="number">.5</span>),</span><br><span class="line">                      pos_hint=&#123;<span class="string">&#x27;center_x&#x27;</span>: <span class="number">.5</span>, <span class="string">&#x27;center_y&#x27;</span>: <span class="number">.5</span>&#125;)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> label</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = MainApp()</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<ul>
-<li>如果遇到问题 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[CRITICAL] [App         ] Unable to get a Text provider, abort.</span><br></pre></td></tr></table></figure>
-<p>则terminal执行下列语句（可能需要梯子）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">pip install --upgraade pip wheel setuptools</span><br><span class="line">pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew</span><br><span class="line">pip install kivy.deps.gstreamer</span><br><span class="line">pip install kivy.deps.angle</span><br><span class="line">pip install --upgrade kivy</span><br></pre></td></tr></table></figure>
-
-<p>2.运行之后可以看见下图，说明成功</p>
-<img src="/2020/11/08/Kivy-Fistly-Set/kivySuccess.png" class="">
-
-
-]]></content>
-      <categories>
-        <category>Kivy</category>
-      </categories>
-      <tags>
-        <tag>zanxinz</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何在没接触过 macOS 开发的情况下 4 个小时写一个学校爬电费状态栏 App</title>
     <url>/2019/12/08/energy-charge-in-macos/</url>
     <content><![CDATA[<p><a href="https://github.com/CLOXnu/Energy_Charge_in_MacOS">GitHub 链接</a></p>
@@ -135,6 +101,42 @@
       <tags>
         <tag>[object Object]</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于 Python 的 Kivy 开发：首次配置 kivy</title>
+    <url>/2020/11/08/Kivy-Firstly-Set/</url>
+    <content><![CDATA[<h1 id="kivy"><a href="#kivy" class="headerlink" title="kivy"></a>kivy</h1><ul>
+<li>kivy 是一个基于 Python 的 App 开发框架，基于 kivy进行移动端的 APP 开发是一个不错的选择。</li>
+<li>首先，演示一下在 win10 环境下配置 kivy。</li>
+</ul>
+<p>1.直接 <code>pip install kivy</code></p>
+<ul>
+<li>自己写个 main.py 作为测试</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> kivy.app <span class="keyword">import</span> App</span><br><span class="line"><span class="keyword">from</span> kivy.uix.label <span class="keyword">import</span> Label</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainApp</span>(<span class="params">App</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">build</span>(<span class="params">self</span>):</span></span><br><span class="line">        label = Label(text=<span class="string">&#x27;Hello from Kivy&#x27;</span>,</span><br><span class="line">                      size_hint=(<span class="number">.5</span>, <span class="number">.5</span>),</span><br><span class="line">                      pos_hint=&#123;<span class="string">&#x27;center_x&#x27;</span>: <span class="number">.5</span>, <span class="string">&#x27;center_y&#x27;</span>: <span class="number">.5</span>&#125;)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> label</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = MainApp()</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<ul>
+<li>如果遇到问题 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[CRITICAL] [App         ] Unable to get a Text provider, abort.</span><br></pre></td></tr></table></figure>
+
+<p>则 terminal 执行下列语句（可能需要梯子）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pip install --upgraade pip wheel setuptools</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install kivy.deps.gstreamer </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install kivy.deps.angle</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install --upgrade kivy</span></span><br></pre></td></tr></table></figure>
+
+<p>2.运行之后可以看见下图，说明成功</p>
+
+
+
+]]></content>
+      <categories>
+        <category>Kivy</category>
+      </categories>
+      <tags>
+        <tag>author: zanxinz</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
 </search>
