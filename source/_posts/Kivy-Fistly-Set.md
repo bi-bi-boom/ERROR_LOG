@@ -6,13 +6,16 @@ categories:
 tags:
 - zanxinz
 ---
+
 # kivy
+
 - kivy是一个基于python的app开发框架
 - 首先，演示一下在win10环境下配置kivy
 
 1.直接pip install kivy
 
 - 自己写个mian.py作为测试
+
 ```py
 from kivy.app import App
 from kivy.uix.label import Label
@@ -29,9 +32,11 @@ if __name__ == '__main__':
     app = MainApp()
     app.run()
 ```
+
 <!-- More -->
 
 - 如果遇到问题 
+
 ```
 [CRITICAL] [App         ] Unable to get a Text provider, abort.
 ```
@@ -43,7 +48,9 @@ pip install kivy.deps.gstreamer
 pip install kivy.deps.angle
 pip install --upgrade kivy
 ```
+
 2.运行之后可以看见下图，说明成功
-## {% asset_img kivySuccess.png %}
+
+{% asset_img kivySuccess.png %}
 
 
