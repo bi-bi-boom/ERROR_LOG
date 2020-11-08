@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-11-08T06:18:57.419Z</updated>
+  <updated>2020-11-08T07:13:43.800Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>基于 jsdelivr 的简单建站思路</title>
-    <link href="http://example.com/2020/11/08/simple-website-building-ideas-based-on-jsdelivr/"/>
-    <id>http://example.com/2020/11/08/simple-website-building-ideas-based-on-jsdelivr/</id>
-    <published>2020-11-07T17:33:10.000Z</published>
-    <updated>2020-11-08T06:18:57.419Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="总体思路"><a href="#总体思路" class="headerlink" title="总体思路"></a>总体思路</h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;总体思路&quot;&gt;&lt;a href=&quot;#总体思路&quot; class=&quot;headerlink&quot; title=&quot;总体思路&quot;&gt;&lt;/a&gt;总体思路&lt;/h2&gt;</summary>
-      
-    
-    
-    
-    <category term="Web" scheme="http://example.com/categories/Web/"/>
-    
-    
-    <category term="[object Object]" scheme="http://example.com/tags/object-Object/"/>
-    
-    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
-    
-  </entry>
   
   <entry>
     <title>基于 Python 的 Kivy 开发：首次配置 kivy</title>
@@ -117,6 +91,33 @@
   </entry>
   
   <entry>
+    <title>基于 jsDelivr 的简单建站思路</title>
+    <link href="http://example.com/2020/07/26/simple-website-building-ideas-based-on-jsdelivr/"/>
+    <id>http://example.com/2020/07/26/simple-website-building-ideas-based-on-jsdelivr/</id>
+    <published>2020-07-25T16:00:00.000Z</published>
+    <updated>2020-11-07T17:33:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>暑假期间，心血来潮想要写一个自己的 travel blog，想要用最低成本的方式写一个最稳定的 blog 网站，以下是我制作这个网站的总体思路，仅供参考。</p><h4 id="我使用的服务"><a href="#我使用的服务" class="headerlink" title="我使用的服务"></a>我使用的服务</h4><ul><li>服务器提供商使用 <a href="https://www.linode.com/">Linode</a>，位于美国加州。</li><li>使用 <a href="https://www.cloudflare.com/">Cloudflare</a> 作为全球 cdn 加速。</li><li>将全站备份于 GitHub，并使用 <a href="https://www.jsdelivr.com/">jsDelivr</a> 加速 GitHub 上的静态资源。</li></ul><p>这个网站是 <a href="https://an.dog/">an.dog</a>，以下是 logo 和截图。</p><img src="/2020/07/26/simple-website-building-ideas-based-on-jsdelivr/travelDogIconHome.svg" class=""><img src="/2020/07/26/simple-website-building-ideas-based-on-jsdelivr/travelDogHome.png" class=""><h2 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h2><p>由于 jsDelivr 在国内有服务器，所以国内的访问速度很快，jsDelivr 的使用参考 <a href="https://www.jsdelivr.com/">官网</a>，简单来说就是通过请求 URL <code>https://cdn.jsdelivr.net/gh/[用户名]/[仓库名]/[文件名]</code> 来访问 GitHub 里的文件，由于有时候 GitHub 的修改可能导致 jsDelivr 没有及时更新，建议在 GitHub 用 release 的方式进行 cdn，这种方法需要访问 <code>https://cdn.jsdelivr.net/gh/[用户名]/[仓库名]@[版本名]/[文件名]</code> 来使用 cdn。</p><p>整站的文章写在根目录的 <code>content/</code> 目录下，每篇文章带有一个 <code>info.json</code>，用来列举文章的详细信息。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;暑假期间，心血来潮想要写一个自己的 travel blog，想要用最低成本的方式写一个最稳定的 blog 网站，以下是我制作这个网站的总体思路，仅供参考。&lt;/p&gt;
+&lt;h4 id=&quot;我使用的服务&quot;&gt;&lt;a href=&quot;#我使用的服务&quot; class=&quot;headerlink&quot; ti</summary>
+      
+    
+    
+    
+    <category term="Web" scheme="http://example.com/categories/Web/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="author: cloxnu" scheme="http://example.com/tags/author-cloxnu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何在没接触过 macOS 开发的情况下 4 个小时写一个学校爬电费状态栏 App</title>
     <link href="http://example.com/2019/12/08/energy-charge-in-macos/"/>
     <id>http://example.com/2019/12/08/energy-charge-in-macos/</id>
@@ -146,9 +147,9 @@
     <category term="macOS" scheme="http://example.com/categories/macOS/"/>
     
     
-    <category term="[object Object]" scheme="http://example.com/tags/object-Object/"/>
-    
     <category term="Swift" scheme="http://example.com/tags/Swift/"/>
+    
+    <category term="author: cloxnu" scheme="http://example.com/tags/author-cloxnu/"/>
     
   </entry>
   
