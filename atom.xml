@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-11-08T06:17:46.655Z</updated>
+  <updated>2020-11-08T06:18:57.419Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于 jsdelivr 的简单建站思路</title>
+    <link href="http://example.com/2020/11/08/simple-website-building-ideas-based-on-jsdelivr/"/>
+    <id>http://example.com/2020/11/08/simple-website-building-ideas-based-on-jsdelivr/</id>
+    <published>2020-11-07T17:33:10.000Z</published>
+    <updated>2020-11-08T06:18:57.419Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="总体思路"><a href="#总体思路" class="headerlink" title="总体思路"></a>总体思路</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;总体思路&quot;&gt;&lt;a href=&quot;#总体思路&quot; class=&quot;headerlink&quot; title=&quot;总体思路&quot;&gt;&lt;/a&gt;总体思路&lt;/h2&gt;</summary>
+      
+    
+    
+    
+    <category term="Web" scheme="http://example.com/categories/Web/"/>
+    
+    
+    <category term="[object Object]" scheme="http://example.com/tags/object-Object/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>Kivy Fistly Set</title>
@@ -50,9 +76,9 @@
     <link href="http://example.com/2020/11/06/get-start/"/>
     <id>http://example.com/2020/11/06/get-start/</id>
     <published>2020-11-06T02:48:31.000Z</published>
-    <updated>2020-11-07T14:39:23.153Z</updated>
+    <updated>2020-11-08T06:18:57.419Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>请确保本机已安装 npm，<a href="https://www.npmjs.com/get-npm">官方链接</a></p><p>请确保已经 clone 这个 repo，<a href="https://github.com/bi-bi-boom/ERROR_LOG">GitHub 链接</a></p><p>请确保本机已安装 hexo，<a href="https://hexo.io/zh-cn/">官方链接</a></p><p>在根目录下运行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><p>hexo 的规则参考 <a href="https://hexo.io/zh-cn/docs/writing">官网 doc</a></p><p>发布时，运行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo g</span></span><br></pre></td></tr></table></figure><p>来生成 public/ 目录；</p><p>运行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo d</span></span><br></pre></td></tr></table></figure><p>上传到 GitHub。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>请确保本机已安装 npm，<a href="https://www.npmjs.com/get-npm">官方链接</a></p><p>请确保已经 clone 这个 repo，<a href="https://github.com/bi-bi-boom/ERROR_LOG">GitHub 链接</a></p><p>请确保本机已安装 hexo，<a href="https://hexo.io/zh-cn/">官方链接</a></p><p>在根目录下运行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><p>hexo 的规则参考 <a href="https://hexo.io/zh-cn/docs/writing">官网 doc</a></p><p>发布时，运行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo g</span></span><br></pre></td></tr></table></figure><p>来生成 public/ 目录；</p><p>运行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo d</span></span><br></pre></td></tr></table></figure><p>上传到 GitHub。</p><blockquote><p>关于文字排版参考 <a href="https://github.com/xitu/gold-miner/wiki/%E8%AF%91%E6%96%87%E6%8E%92%E7%89%88%E8%A7%84%E5%88%99%E6%8C%87%E5%8C%97">这篇文章</a></p></blockquote>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Installation&quot; class=&quot;headerlink&quot; title=&quot;Installation&quot;&gt;&lt;/a&gt;Installation&lt;/h2&gt;&lt;p&gt;请确保本机已安装 npm，&lt;a href=&quot;https://www.npmjs.com/get-npm&quot;&gt;官方链接&lt;/a&gt;&lt;/p&gt;
@@ -117,6 +143,8 @@
     
     <category term="macOS" scheme="http://example.com/categories/macOS/"/>
     
+    
+    <category term="[object Object]" scheme="http://example.com/tags/object-Object/"/>
     
     <category term="Swift" scheme="http://example.com/tags/Swift/"/>
     
