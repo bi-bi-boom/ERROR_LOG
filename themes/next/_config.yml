@@ -159,7 +159,7 @@ sidebar:
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
   # Enable sidebar on narrow view (only for Muse | Mist).
-  onmobile: false
+  onmobile: true
 
 # Sidebar Avatar
 avatar:
@@ -180,6 +180,7 @@ site_state: true
 social:
   GitHub: https://github.com/bi-bi-boom || fab fa-github
   E-Mail: mailto:bi.bi.boom@outlook.com || fa fa-envelope
+  RSS: /atom.xml || fa fa-rss
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -278,7 +279,6 @@ follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
   #WeChat: /images/wechat_channel.jpg || fab fa-weixin
-  #RSS: /atom.xml
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts

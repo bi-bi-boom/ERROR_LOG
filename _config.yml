@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://bibiboom.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -106,6 +106,18 @@ symbols_count_time:
   time: true
   total_symbols: true
   total_time: true
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content: true
+  content_limit: 140
+  content_limit_delim: " "
+  order_by: -date
+  icon: images/logo.svg
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

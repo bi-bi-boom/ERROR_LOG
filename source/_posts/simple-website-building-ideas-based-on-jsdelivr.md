@@ -16,6 +16,8 @@ tags:
 - 使用 [Cloudflare](https://www.cloudflare.com) 作为全球 cdn 加速。
 - 将全站备份于 GitHub，并使用 [jsDelivr](https://www.jsdelivr.com) 加速 GitHub 上的静态资源。
 
+<!-- More -->
+
 这个网站是 [an.dog](https://an.dog)，以下是 logo 和截图。
 
 {% asset_img travelDogIconHome.svg %}
