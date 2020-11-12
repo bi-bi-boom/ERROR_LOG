@@ -1,13 +1,11 @@
 ---
-title: java-first
+title: 遇见 JVM 的第一印象
 date: 2020-11-13 01:22:48
 categories: 
 - Java
 tags: 
 - "author: zanxinz"
 ---
-
-## 遇见 JVM 的第一印象
 
 | 术语 | 全称 | 中文 |
 | :---:|  :---: | :---: |
@@ -20,7 +18,7 @@ tags:
 
 <!-- More -->
 
-### Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）
+## Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）
 
 - 真正在机器上运行的是二进制码。
 - 本机的的编译器把源代码（程序员写的东西）翻译成二进制码。
@@ -36,7 +34,7 @@ tags:
   - javadoc：文档生成工具，从源码中提取注释，注释需要符合规范
   - 初学者常用的是上面这几个工具，后面还有十几个，这个留到学到的时候再做展开。
 
-### Java 是一个标准
+## Java 是一个标准
 
 - 像System、out、println这些名称，都是标准中所规范的名称。前人依据 JSR 标准文件，写出了一套标准的程序库（如 Java SE API 里面就包含各种标准API，以 .class 的形式）。
 - 需要有人写出 System.java 编译后为 System.class，第一个程序里面写这样，我才能使用 System类（class）里面的 out 对象（object）的 print 方法（Method）。
