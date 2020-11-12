@@ -8,7 +8,7 @@ tags:
 - Python
 ---
 
-# kivy
+## kivy
 
 - kivy 是一个基于 Python 的 App 开发框架，基于 kivy进行移动端的 APP 开发是一个不错的选择。
 - 首先，演示一下在 win10 环境下配置 kivy。
@@ -36,24 +36,22 @@ if __name__ == '__main__':
 
 <!-- More -->
 
-- 如果遇到问题 
-
-```
+- 如果遇到问题
+  
+```html
 [CRITICAL] [App         ] Unable to get a Text provider, abort.
 ```
 
 则 terminal 执行下列语句（可能需要梯子）
 
 ```shell
-$ pip install --upgraade pip wheel setuptools
-$ pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
-$ pip install kivy.deps.gstreamer 
-$ pip install kivy.deps.angle
-$ pip install --upgrade kivy
+pip install --upgraade pip wheel setuptools
+pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
+pip install kivy.deps.gstreamer
+pip install kivy.deps.angle
+pip install --upgrade kivy
 ```
 
 2.运行之后可以看见下图，说明成功
 
 {% asset_img kivySuccess.png %}
-
-
