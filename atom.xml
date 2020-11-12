@@ -6,7 +6,7 @@
   <link href="https://bibiboom.top/atom.xml" rel="self"/>
   
   <link href="https://bibiboom.top/"/>
-  <updated>2020-11-12T17:31:41.309Z</updated>
+  <updated>2020-11-12T17:43:02.728Z</updated>
   <id>https://bibiboom.top/</id>
   
   <author>
@@ -17,16 +17,16 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>java-first</title>
+    <title>遇见 JVM 的第一印象</title>
     <link href="https://bibiboom.top/2020/11/13/java-first/"/>
     <id>https://bibiboom.top/2020/11/13/java-first/</id>
     <published>2020-11-12T17:22:48.000Z</published>
-    <updated>2020-11-12T17:31:41.309Z</updated>
+    <updated>2020-11-12T17:43:02.728Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="遇见-JVM-的第一印象"><a href="#遇见-JVM-的第一印象" class="headerlink" title="遇见 JVM 的第一印象"></a>遇见 JVM 的第一印象</h2><table><thead><tr><th align="center">术语</th><th align="center">全称</th><th align="center">中文</th></tr></thead><tbody><tr><td align="center">JDK</td><td align="center">Java Development Kit</td><td align="center">Java 开发工具包</td></tr><tr><td align="center">JRE</td><td align="center">Java Running Environment</td><td align="center">Java 运行环境</td></tr><tr><td align="center">JVM</td><td align="center">Java Virtual Machine</td><td align="center">Java 虚拟机器</td></tr><tr><td align="center">JSR</td><td align="center">Java Specification Requests</td><td align="center">Java 规范提案</td></tr></tbody></table><hr><a id="more"></a><h3 id="Java-具有跨平台特性（体现在-class-和-JVM-的关系中）"><a href="#Java-具有跨平台特性（体现在-class-和-JVM-的关系中）" class="headerlink" title="Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）"></a>Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）</h3><ul><li>真正在机器上运行的是二进制码。</li><li>本机的的编译器把源代码（程序员写的东西）翻译成二进制码。</li><li>以前的编译器（比如C、C++），编译之后的代码只能在同样的平台上运行（如 Windows 编译后的内容无法在 Linux 上使用）。这就是跨平台的问题。</li><li>Java 通过 JVM（JAVA Virtual Machine）解决跨平问题。</li><li>JVM 负责把 .java 格式文件编译成 .class 的文件。</li><li><strong>.class 是通用的</strong>。<ul><li>不管机器是哪个平台的（Window、Linux或是 MAC OS），只要机器中装有 JVM，JVM 就可以把 .class 翻译成适应本机的二进制代码，然后可以直接运行。这也正是 Java 的「编译一次，到处执行。」思想的所在。</li></ul></li><li>JDK（Java Development Kit） 包含了好几个工具。<ul><li>javac：编译器，把 .java 编译成 .class</li><li>java：运行工具，直接运行 .class 后缀的文件</li><li>jar：打包工具，把相关类文件打包成 jar 包</li><li>javadoc：文档生成工具，从源码中提取注释，注释需要符合规范</li><li>初学者常用的是上面这几个工具，后面还有十几个，这个留到学到的时候再做展开。</li></ul></li></ul><h3 id="Java-是一个标准"><a href="#Java-是一个标准" class="headerlink" title="Java 是一个标准"></a>Java 是一个标准</h3><ul><li>像System、out、println这些名称，都是标准中所规范的名称。前人依据 JSR 标准文件，写出了一套标准的程序库（如 Java SE API 里面就包含各种标准API，以 .class 的形式）。</li><li>需要有人写出 System.java 编译后为 System.class，第一个程序里面写这样，我才能使用 System类（class）里面的 out 对象（object）的 print 方法（Method）。</li><li>而 JRE（Java Running Environment）就包含了 Java SE API 和 JVM 。<ul><li>运行编译好的文件（.class），只需要 JRE ，因为自己写的程序里面调用了Java SE API里的方法。而如果要自己编写源程序并且进行编译（需要用到javac），则只需要 JDK。</li></ul></li></ul><hr>]]></content>
+    <content type="html"><![CDATA[<table><thead><tr><th align="center">术语</th><th align="center">全称</th><th align="center">中文</th></tr></thead><tbody><tr><td align="center">JDK</td><td align="center">Java Development Kit</td><td align="center">Java 开发工具包</td></tr><tr><td align="center">JRE</td><td align="center">Java Running Environment</td><td align="center">Java 运行环境</td></tr><tr><td align="center">JVM</td><td align="center">Java Virtual Machine</td><td align="center">Java 虚拟机器</td></tr><tr><td align="center">JSR</td><td align="center">Java Specification Requests</td><td align="center">Java 规范提案</td></tr></tbody></table><hr><a id="more"></a><h2 id="Java-具有跨平台特性（体现在-class-和-JVM-的关系中）"><a href="#Java-具有跨平台特性（体现在-class-和-JVM-的关系中）" class="headerlink" title="Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）"></a>Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）</h2><ul><li>真正在机器上运行的是二进制码。</li><li>本机的的编译器把源代码（程序员写的东西）翻译成二进制码。</li><li>以前的编译器（比如C、C++），编译之后的代码只能在同样的平台上运行（如 Windows 编译后的内容无法在 Linux 上使用）。这就是跨平台的问题。</li><li>Java 通过 JVM（JAVA Virtual Machine）解决跨平问题。</li><li>JVM 负责把 .java 格式文件编译成 .class 的文件。</li><li><strong>.class 是通用的</strong>。<ul><li>不管机器是哪个平台的（Window、Linux或是 MAC OS），只要机器中装有 JVM，JVM 就可以把 .class 翻译成适应本机的二进制代码，然后可以直接运行。这也正是 Java 的「编译一次，到处执行。」思想的所在。</li></ul></li><li>JDK（Java Development Kit） 包含了好几个工具。<ul><li>javac：编译器，把 .java 编译成 .class</li><li>java：运行工具，直接运行 .class 后缀的文件</li><li>jar：打包工具，把相关类文件打包成 jar 包</li><li>javadoc：文档生成工具，从源码中提取注释，注释需要符合规范</li><li>初学者常用的是上面这几个工具，后面还有十几个，这个留到学到的时候再做展开。</li></ul></li></ul><h2 id="Java-是一个标准"><a href="#Java-是一个标准" class="headerlink" title="Java 是一个标准"></a>Java 是一个标准</h2><ul><li>像System、out、println这些名称，都是标准中所规范的名称。前人依据 JSR 标准文件，写出了一套标准的程序库（如 Java SE API 里面就包含各种标准API，以 .class 的形式）。</li><li>需要有人写出 System.java 编译后为 System.class，第一个程序里面写这样，我才能使用 System类（class）里面的 out 对象（object）的 print 方法（Method）。</li><li>而 JRE（Java Running Environment）就包含了 Java SE API 和 JVM 。<ul><li>运行编译好的文件（.class），只需要 JRE ，因为自己写的程序里面调用了Java SE API里的方法。而如果要自己编写源程序并且进行编译（需要用到javac），则只需要 JDK。</li></ul></li></ul><hr>]]></content>
     
     
-    <summary type="html">&lt;h2 id=&quot;遇见-JVM-的第一印象&quot;&gt;&lt;a href=&quot;#遇见-JVM-的第一印象&quot; class=&quot;headerlink&quot; title=&quot;遇见 JVM 的第一印象&quot;&gt;&lt;/a&gt;遇见 JVM 的第一印象&lt;/h2&gt;&lt;table&gt;
+    <summary type="html">&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&quot;center&quot;&gt;术语&lt;/th&gt;

@@ -190,9 +190,9 @@
       </tags>
   </entry>
   <entry>
-    <title>java-first</title>
+    <title>遇见 JVM 的第一印象</title>
     <url>/2020/11/13/java-first/</url>
-    <content><![CDATA[<h2 id="遇见-JVM-的第一印象"><a href="#遇见-JVM-的第一印象" class="headerlink" title="遇见 JVM 的第一印象"></a>遇见 JVM 的第一印象</h2><table>
+    <content><![CDATA[<table>
 <thead>
 <tr>
 <th align="center">术语</th>
@@ -224,7 +224,7 @@
 <hr>
 <a id="more"></a>
 
-<h3 id="Java-具有跨平台特性（体现在-class-和-JVM-的关系中）"><a href="#Java-具有跨平台特性（体现在-class-和-JVM-的关系中）" class="headerlink" title="Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）"></a>Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）</h3><ul>
+<h2 id="Java-具有跨平台特性（体现在-class-和-JVM-的关系中）"><a href="#Java-具有跨平台特性（体现在-class-和-JVM-的关系中）" class="headerlink" title="Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）"></a>Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）</h2><ul>
 <li>真正在机器上运行的是二进制码。</li>
 <li>本机的的编译器把源代码（程序员写的东西）翻译成二进制码。</li>
 <li>以前的编译器（比如C、C++），编译之后的代码只能在同样的平台上运行（如 Windows 编译后的内容无法在 Linux 上使用）。这就是跨平台的问题。</li>
@@ -243,7 +243,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="Java-是一个标准"><a href="#Java-是一个标准" class="headerlink" title="Java 是一个标准"></a>Java 是一个标准</h3><ul>
+<h2 id="Java-是一个标准"><a href="#Java-是一个标准" class="headerlink" title="Java 是一个标准"></a>Java 是一个标准</h2><ul>
 <li>像System、out、println这些名称，都是标准中所规范的名称。前人依据 JSR 标准文件，写出了一套标准的程序库（如 Java SE API 里面就包含各种标准API，以 .class 的形式）。</li>
 <li>需要有人写出 System.java 编译后为 System.class，第一个程序里面写这样，我才能使用 System类（class）里面的 out 对象（object）的 print 方法（Method）。</li>
 <li>而 JRE（Java Running Environment）就包含了 Java SE API 和 JVM 。<ul>
