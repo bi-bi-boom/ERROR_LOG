@@ -5,6 +5,7 @@ categories:
 - Java
 tags: 
 - "author: zanxinz"
+- java
 ---
 
 | 术语 | 全称 | 中文 |
