@@ -50,16 +50,18 @@
 <p>请确保已经 clone 这个 repo，<a href="https://github.com/bi-bi-boom/ERROR_LOG">GitHub 链接</a></p>
 <p>请确保本机已安装 hexo，<a href="https://hexo.io/zh-cn/">官方链接</a></p>
 <p>在根目录下运行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
 <h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><p>hexo 的规则参考 <a href="https://hexo.io/zh-cn/docs/writing">官网 doc</a></p>
 <p>发布时，运行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo g</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
 <p>来生成 public/ 目录；</p>
 <p>运行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo d</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
 <p>上传到 GitHub。</p>
 <blockquote>
 <p>关于文字排版参考 <a href="https://github.com/xitu/gold-miner/wiki/%E8%AF%91%E6%96%87%E6%8E%92%E7%89%88%E8%A7%84%E5%88%99%E6%8C%87%E5%8C%97">这篇文章</a></p>
@@ -100,13 +102,21 @@
 <li>使用 <a href="https://www.cloudflare.com/">Cloudflare</a> 作为全球 cdn 加速。</li>
 <li>将全站备份于 GitHub，并使用 <a href="https://www.jsdelivr.com/">jsDelivr</a> 加速 GitHub 上的静态资源。</li>
 </ul>
+<a id="more"></a>
+
 <p>这个网站是 <a href="https://an.dog/">an.dog</a>，以下是 logo 和截图。</p>
 <img src="/2020/07/26/simple-website-building-ideas-based-on-jsdelivr/travelDogIconHome.svg" class="">
 
 <img src="/2020/07/26/simple-website-building-ideas-based-on-jsdelivr/travelDogHome.png" class="">
 
-<h2 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h2><p>由于 jsDelivr 在国内有服务器，所以国内的访问速度很快，jsDelivr 的使用参考 <a href="https://www.jsdelivr.com/">官网</a>，简单来说就是通过请求 URL <code>https://cdn.jsdelivr.net/gh/[用户名]/[仓库名]/[文件名]</code> 来访问 GitHub 里的文件，由于有时候 GitHub 的修改可能导致 jsDelivr 没有及时更新，建议在 GitHub 用 release 的方式进行 cdn，这种方法需要访问 <code>https://cdn.jsdelivr.net/gh/[用户名]/[仓库名]@[版本名]/[文件名]</code> 来使用 cdn。</p>
-<p>整站的文章写在根目录的 <code>content/</code> 目录下，每篇文章带有一个 <code>info.json</code>，用来列举文章的详细信息。</p>
+<h2 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h2><p>jsDelivr 的作用主要用来加速需网络速度较快的静态资源，如图片、视频等等。由于 jsDelivr 在国内有服务器，所以国内的访问速度很快，jsDelivr 的使用参考 <a href="https://www.jsdelivr.com/">官网</a>，简单来说就是通过请求 URL <code>https://cdn.jsdelivr.net/gh/[用户名]/[仓库名]/[文件路径]</code> 来访问 GitHub 里的文件，由于有时候 GitHub 的修改可能导致 jsDelivr 没有及时更新，建议在 GitHub 用 release 的方式进行 cdn 加速，这种方法需要访问 <code>https://cdn.jsdelivr.net/gh/[用户名]/[仓库名]@[版本名]/[文件路径]</code> 来使用 cdn。<a href="https://github.com/CLOXnu/travelblog">an.dog 的 GitHub 链接</a></p>
+<p>整站的文章写在根目录的 <code>content/</code> 目录下，每篇文章带有一个 <code>info.json</code>，用来列举文章的详细信息。后端语言使用 PHP，动态读取 <code>content/</code> 目录下的文件，然后前端 JavaScript 将 Markdown 转为 Html。</p>
+<p>这里使用一个 JavaScript 工具 <a href="https://marked.js.org/">Marked</a> 完成 Markdown 转 Html 的工作。在 Marked 的说明文档中介绍到，可以使用 renderer 将 Markdown 转换过程中遇到指定的内容并转换成需要的格式，这样就可以将文章中引用到的图片转换成 jsDelivr 的地址了（如下图）（那个 baseURL 就是 jsDelivr cdn 的前缀：<code>https://cdn.jsdelivr.net/gh/...</code>）</p>
+<img src="/2020/07/26/simple-website-building-ideas-based-on-jsdelivr/marked.png" class="">
+
+<blockquote>
+<p>图片中那个 <code>level === 2 || level === 4</code> 的意思是我将标题等级为 2 和 4 的标题加一个 id，后面可以定位这些标题。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>Web</category>
@@ -119,7 +129,7 @@
   <entry>
     <title>基于 Python 的 Kivy 开发：首次配置 kivy</title>
     <url>/2020/11/08/Kivy-Firstly-Set/</url>
-    <content><![CDATA[<h1 id="kivy"><a href="#kivy" class="headerlink" title="kivy"></a>kivy</h1><ul>
+    <content><![CDATA[<h2 id="kivy"><a href="#kivy" class="headerlink" title="kivy"></a>kivy</h2><ul>
 <li>kivy 是一个基于 Python 的 App 开发框架，基于 kivy进行移动端的 APP 开发是一个不错的选择。</li>
 <li>首先，演示一下在 win10 环境下配置 kivy。</li>
 </ul>
@@ -132,17 +142,15 @@
 <a id="more"></a>
 
 <ul>
-<li>如果遇到问题 </li>
+<li>如果遇到问题</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[CRITICAL] [App         ] Unable to get a Text provider, abort.</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">[CRITICAL] [App         ] Unable to get a Text provider, abort.</span><br></pre></td></tr></table></figure>
 
 <p>则 terminal 执行下列语句（可能需要梯子）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pip install --upgraade pip wheel setuptools</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install kivy.deps.gstreamer </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install kivy.deps.angle</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install --upgrade kivy</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install --upgraade pip wheel setuptools</span><br><span class="line">pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew</span><br><span class="line">pip install kivy.deps.gstreamer</span><br><span class="line">pip install kivy.deps.angle</span><br><span class="line">pip install --upgrade kivy</span><br></pre></td></tr></table></figure>
 
 <p>2.运行之后可以看见下图，说明成功</p>
-
-
-
+<img src="/2020/11/08/Kivy-Firstly-Set/kivySuccess.png" class="">
 ]]></content>
       <categories>
         <category>Kivy</category>
@@ -150,6 +158,106 @@
       <tags>
         <tag>author: zanxinz</tag>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS 检测第一次 / 新版本第一次进入 App</title>
+    <url>/2020/11/09/detect-first-enter-in-ios/</url>
+    <content><![CDATA[<p>项目中经常需要检测应用是否第一次打开，判断是否需要新手引导，将检测代码写在另一个 class 的静态方法中，再在需要的页面或 AppDelegate 中调用。</p>
+<a id="more"></a>
+
+<p>Swift:</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 检测第一次打开</span></span><br><span class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">isFirstLaunch</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> isFirstLaunch = !<span class="type">UserDefaults</span>.standard.bool(forKey: <span class="string">&quot;hasBeenLaunched&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> isFirstLaunch</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(<span class="literal">true</span>, forKey: <span class="string">&quot;hasBeenLaunched&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> isFirstLaunch</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检测第一次打开 / 新版本第一次打开</span></span><br><span class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">isFirstLaunchOfNewVersion</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> defaults = <span class="type">UserDefaults</span>.standard;</span><br><span class="line">    <span class="keyword">let</span> currentVersion = <span class="type">Bundle</span>.main.infoDictionary![<span class="string">&quot;CFBundleShortVersionString&quot;</span>] <span class="keyword">as</span>! <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> lastLaunchVersion = defaults.string(forKey: <span class="string">&quot;lastLaunchVersion&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> (!lastLaunchVersion) &#123;</span><br><span class="line">        <span class="comment">// 第一次打开</span></span><br><span class="line">        defaults.<span class="keyword">set</span>(currentVersion, forKey: <span class="string">&quot;lastLaunchVersion&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (lastLaunchVersion != currentVersion) &#123;</span><br><span class="line">        <span class="comment">// 版本更新第一次打开</span></span><br><span class="line">        defaults.<span class="keyword">set</span>(currentVersion, forKey: <span class="string">&quot;lastLaunchVersion&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检测某个页面是否第一次打开 / 新版本第一次打开（需要传递 classname）</span></span><br><span class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">isFirstLaunchOfNewVersion</span><span class="params">(inClassName name: String)</span></span> &#123;</span><br><span class="line">    <span class="keyword">let</span> defaults = <span class="type">UserDefaults</span>.standard;</span><br><span class="line">    <span class="keyword">let</span> currentVersion = <span class="type">Bundle</span>.main.infoDictionary![<span class="string">&quot;CFBundleShortVersionString&quot;</span>] <span class="keyword">as</span>! <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> lastLaunchVersion = defaults.string(forKey: <span class="string">&quot;lastLaunchVersion_&quot;</span> + name)</span><br><span class="line">    <span class="keyword">if</span> (!lastLaunchVersion) &#123;</span><br><span class="line">        <span class="comment">// 第一次打开</span></span><br><span class="line">        defaults.<span class="keyword">set</span>(currentVersion, forKey: <span class="string">&quot;lastLaunchVersion_&quot;</span> + name)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (lastLaunchVersion != currentVersion) &#123;</span><br><span class="line">        <span class="comment">// 版本更新第一次打开</span></span><br><span class="line">        defaults.<span class="keyword">set</span>(currentVersion, forKey: <span class="string">&quot;lastLaunchVersion_&quot;</span> + name)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于检测某个页面是否第一次打开只需在目标 ViewController 里加上</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (isFirstLaunchOfNewVersion(inClassName: <span class="type">String</span>(describing: <span class="keyword">self</span>.classForCoder))) &#123;</span><br><span class="line">    <span class="comment">// print(&quot;第一次打开，启动新手引导&quot;)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>Objective-C:</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+ (<span class="built_in">BOOL</span>) isFirstLaunch &#123;</span><br><span class="line">    <span class="built_in">BOOL</span> isFirstLaunch = ![[<span class="built_in">NSUserDefaults</span> standardUserDefaults] boolForKey:<span class="string">@&quot;hasBeenLaunched&quot;</span>];</span><br><span class="line">    <span class="keyword">if</span> (isFirstLaunch) &#123;</span><br><span class="line">        [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] setBool:<span class="literal">YES</span> forKey:<span class="string">@&quot;hasBeenLaunched&quot;</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> isFirstLaunch;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (<span class="built_in">BOOL</span>) isFirstLaunchOfNewVersion &#123;</span><br><span class="line">    <span class="built_in">NSUserDefaults</span> *defaults = [<span class="built_in">NSUserDefaults</span> standardUserDefaults];</span><br><span class="line">    <span class="built_in">NSString</span> *currentVersion = [[[<span class="built_in">NSBundle</span> mainBundle] infoDictionary] objectForKey:<span class="string">@&quot;CFBundleShortVersionString&quot;</span>];</span><br><span class="line">    <span class="built_in">NSString</span> *lastLaunchVersion = [defaults objectForKey:<span class="string">@&quot;lastLaunchVersion&quot;</span>];</span><br><span class="line">    <span class="keyword">if</span> (!lastLaunchVersion) &#123;</span><br><span class="line">        <span class="comment">// 第一次打开</span></span><br><span class="line">        [defaults setObject:currentVersion forKey:<span class="string">@&quot;lastLaunchVersion&quot;</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (![lastLaunchVersion isEqualToString:currentVersion]) &#123;</span><br><span class="line">        <span class="comment">// 版本更新第一次打开</span></span><br><span class="line">        [defaults setObject:currentVersion forKey:<span class="string">@&quot;lastLaunchVersion&quot;</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (<span class="built_in">BOOL</span>) isFirstLaunchOfNewVersionInClassName:(<span class="built_in">NSString</span> *)name &#123;</span><br><span class="line">    <span class="built_in">NSUserDefaults</span> *defaults = [<span class="built_in">NSUserDefaults</span> standardUserDefaults];</span><br><span class="line">    <span class="built_in">NSString</span> *currentVersion = [[[<span class="built_in">NSBundle</span> mainBundle] infoDictionary] objectForKey:<span class="string">@&quot;CFBundleShortVersionString&quot;</span>];</span><br><span class="line">    <span class="built_in">NSString</span> *lastLaunchVersion = [defaults objectForKey:[<span class="string">@&quot;lastLaunchVersion_&quot;</span> stringByAppendingString:name]];</span><br><span class="line">    <span class="keyword">if</span> (!lastLaunchVersion) &#123;</span><br><span class="line">        <span class="comment">// 第一次打开</span></span><br><span class="line">        [defaults setObject:currentVersion forKey:[<span class="string">@&quot;lastLaunchVersion_&quot;</span> stringByAppendingString:name]];</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (![lastLaunchVersion isEqualToString:currentVersion]) &#123;</span><br><span class="line">        <span class="comment">// 版本更新第一次打开</span></span><br><span class="line">        [defaults setObject:currentVersion forKey:[<span class="string">@&quot;lastLaunchVersion_&quot;</span> stringByAppendingString:name]];</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于检测某个页面是否第一次打开只需在目标 ViewController 里加上</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (isFirstLaunchOfNewVersionInClassName:<span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> <span class="keyword">class</span>])) &#123;</span><br><span class="line">    <span class="comment">// print(&quot;第一次打开，启动新手引导&quot;)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>iOS</category>
+        <category>实用</category>
+      </categories>
+      <tags>
+        <tag>Swift</tag>
+        <tag>author: cloxnu</tag>
+        <tag>Objective-C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java-first</title>
+    <url>/2020/11/13/java-first/</url>
+    <content><![CDATA[<h2 id="遇见-JVM-的第一印象"><a href="#遇见-JVM-的第一印象" class="headerlink" title="遇见 JVM 的第一印象"></a>遇见 JVM 的第一印象</h2><table>
+<thead>
+<tr>
+<th align="center">术语</th>
+<th align="center">全称</th>
+<th align="center">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">JDK</td>
+<td align="center">Java Development Kit</td>
+<td align="center">Java 开发工具包</td>
+</tr>
+<tr>
+<td align="center">JRE</td>
+<td align="center">Java Running Environment</td>
+<td align="center">Java 运行环境</td>
+</tr>
+<tr>
+<td align="center">JVM</td>
+<td align="center">Java Virtual Machine</td>
+<td align="center">Java 虚拟机器</td>
+</tr>
+<tr>
+<td align="center">JSR</td>
+<td align="center">Java Specification Requests</td>
+<td align="center">Java 规范提案</td>
+</tr>
+</tbody></table>
+<hr>
+<a id="more"></a>
+
+<h3 id="Java-具有跨平台特性（体现在-class-和-JVM-的关系中）"><a href="#Java-具有跨平台特性（体现在-class-和-JVM-的关系中）" class="headerlink" title="Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）"></a>Java 具有跨平台特性（体现在 .class 和 JVM 的关系中）</h3><ul>
+<li>真正在机器上运行的是二进制码。</li>
+<li>本机的的编译器把源代码（程序员写的东西）翻译成二进制码。</li>
+<li>以前的编译器（比如C、C++），编译之后的代码只能在同样的平台上运行（如 Windows 编译后的内容无法在 Linux 上使用）。这就是跨平台的问题。</li>
+<li>Java 通过 JVM（JAVA Virtual Machine）解决跨平问题。</li>
+<li>JVM 负责把 .java 格式文件编译成 .class 的文件。</li>
+<li><strong>.class 是通用的</strong>。<ul>
+<li>不管机器是哪个平台的（Window、Linux或是 MAC OS），只要机器中装有 JVM，JVM 就可以把 .class 翻译成适应本机的二进制代码，然后可以直接运行。这也正是 Java 的「编译一次，到处执行。」思想的所在。</li>
+</ul>
+</li>
+<li>JDK（Java Development Kit） 包含了好几个工具。<ul>
+<li>javac：编译器，把 .java 编译成 .class</li>
+<li>java：运行工具，直接运行 .class 后缀的文件</li>
+<li>jar：打包工具，把相关类文件打包成 jar 包</li>
+<li>javadoc：文档生成工具，从源码中提取注释，注释需要符合规范</li>
+<li>初学者常用的是上面这几个工具，后面还有十几个，这个留到学到的时候再做展开。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Java-是一个标准"><a href="#Java-是一个标准" class="headerlink" title="Java 是一个标准"></a>Java 是一个标准</h3><ul>
+<li>像System、out、println这些名称，都是标准中所规范的名称。前人依据 JSR 标准文件，写出了一套标准的程序库（如 Java SE API 里面就包含各种标准API，以 .class 的形式）。</li>
+<li>需要有人写出 System.java 编译后为 System.class，第一个程序里面写这样，我才能使用 System类（class）里面的 out 对象（object）的 print 方法（Method）。</li>
+<li>而 JRE（Java Running Environment）就包含了 Java SE API 和 JVM 。<ul>
+<li>运行编译好的文件（.class），只需要 JRE ，因为自己写的程序里面调用了Java SE API里的方法。而如果要自己编写源程序并且进行编译（需要用到javac），则只需要 JDK。</li>
+</ul>
+</li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>author: zanxinz</tag>
       </tags>
   </entry>
 </search>
