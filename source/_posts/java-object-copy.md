@@ -170,7 +170,7 @@ public class Console {
   
   System.out.println("----------------");
   System.out.println("修改后：");
-  System.out.println(stu.getName()+stu.getMoney()+stu.getWalletRank());//stu很无辜地被改变
+  System.out.println(stu.getName()+stu.getMoney()+stu.getWalletRank());//stu的wallet很无辜地被改变
   System.out.println(stu2.getName()+stu2.getMoney()+stu2.getWalletRank());
   System.out.println("----------------");
   
