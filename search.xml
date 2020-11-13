@@ -313,7 +313,7 @@
   </entry>
   <entry>
     <title>Java 对象的浅复制和深复制</title>
-    <url>/2020/11/13/java-cobject-copy/</url>
+    <url>/2020/11/13/java-object-copy/</url>
     <content><![CDATA[<table>
 <thead>
 <tr>
@@ -335,12 +335,14 @@
 </tr>
 </tbody></table>
 <hr>
+<a id="more"></a>
+
 <h2 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h2><ul>
 <li><p>原理</p>
 
 </li>
 <li><p>类图</p>
-
+<img src="/2020/11/13/java-object-copy/UML%E6%B5%85%E5%A4%8D%E5%88%B6.png" class="">
 
 </li>
 </ul>
