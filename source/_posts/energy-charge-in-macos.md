@@ -36,7 +36,7 @@ tags:
 
 <!-- More -->
 
-## Hardworking...
+## Hardworking
 
 Xcode - File - New - Project...
 

@@ -71,7 +71,6 @@ if (isFirstLaunchOfNewVersion(inClassName: String(describing: self.classForCoder
 }
 ```
 
-
 Objective-C:
 
 ```objc
