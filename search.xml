@@ -212,7 +212,7 @@
 
 <h2 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h2><ul>
 <li><p>原理</p>
-
+<img src="/2020/11/13/java-object-copy/Java%E6%B5%85%E5%A4%8D%E5%88%B6.png" class="">
 </li>
 <li><p>类图</p>
 <img src="/2020/11/13/java-object-copy/UML%E6%B5%85%E5%A4%8D%E5%88%B6.png" class="">
