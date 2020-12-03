@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-32x32-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Recursive:300,300italic,400,400italic,700,700italic|Jetbrains Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bibiboom.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="剑指 Offer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法刷题记录">
+<meta property="og:url" content="https://bibiboom.top/2020/11/21/algorithm-exercise/index.html">
+<meta property="og:site_name" content="Bi~Bi~Boom">
+<meta property="og:description" content="剑指 Offer">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-21T03:41:35.000Z">
+<meta property="article:modified_time" content="2020-12-03T04:59:35.546Z">
+<meta property="article:author" content="Bi~Bi~Boom">
+<meta property="article:tag" content="author: cloxnu">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://bibiboom.top/2020/11/21/algorithm-exercise/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>算法刷题记录 | Bi~Bi~Boom</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Bi~Bi~Boom" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bi~Bi~Boom</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://bibiboom.top/2020/11/21/algorithm-exercise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Bi~Bi~Boom">
+      <meta itemprop="description" content="A team dedicated to boom.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bi~Bi~Boom">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          算法刷题记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-21 11:41:35" itemprop="dateCreated datePublished" datetime="2020-11-21T11:41:35+08:00">2020-11-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-03 12:59:35" itemprop="dateModified" datetime="2020-12-03T12:59:35+08:00">2020-12-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/11/21/algorithm-exercise/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/21/algorithm-exercise/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="剑指-Offer"><a href="#剑指-Offer" class="headerlink" title="剑指 Offer"></a>剑指 Offer</h2><a id="more"></a>
+
+<h4 id="4-二维数组中的查找"><a href="#4-二维数组中的查找" class="headerlink" title="4. 二维数组中的查找"></a>4. 二维数组中的查找</h4><p>从数组右上角（或左下角）开始找，遇到比 target 小的向下（右）找，遇到比 target 大的向左（上）找。</p>
+<h4 id="10-II-青蛙跳台阶问题"><a href="#10-II-青蛙跳台阶问题" class="headerlink" title="10 - II. 青蛙跳台阶问题"></a>10 - II. 青蛙跳台阶问题</h4><p>本题可转化为 <strong>求斐波那契数列第 n 项的值</strong>，使用动态规划求解</p>
+<h4 id="11-旋转数组的最小数字"><a href="#11-旋转数组的最小数字" class="headerlink" title="11. 旋转数组的最小数字"></a>11. 旋转数组的最小数字</h4><p>二分查找：将中间值与最后一个值比较，若大，将 left = mid + 1，若小，将 right = mid，若等，则 right -= 1</p>
+<h4 id="12-矩阵中的路径"><a href="#12-矩阵中的路径" class="headerlink" title="12. 矩阵中的路径"></a>12. 矩阵中的路径</h4><p>本质上是图的深搜，使用递归求解</p>
+<h4 id="13-机器人的运动范围"><a href="#13-机器人的运动范围" class="headerlink" title="13. 机器人的运动范围"></a>13. 机器人的运动范围</h4><p>广搜模板题</p>
+<h4 id="15-二进制中-1-的个数"><a href="#15-二进制中-1-的个数" class="headerlink" title="15. 二进制中 1 的个数"></a>15. 二进制中 1 的个数</h4><p>巧用 n &amp; (n-1)</p>
+<h4 id="16-数值的整数次方"><a href="#16-数值的整数次方" class="headerlink" title="16. 数值的整数次方"></a>16. 数值的整数次方</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> n:</span><br><span class="line">    <span class="keyword">if</span> n &amp; <span class="number">1</span>: res *= x</span><br><span class="line">    x *= x</span><br><span class="line">    n &gt;&gt;= <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="17-打印从-1-到最大的-n-位数"><a href="#17-打印从-1-到最大的-n-位数" class="headerlink" title="17. 打印从 1 到最大的 n 位数"></a>17. 打印从 1 到最大的 n 位数</h4><p>有点深搜的意思</p>
+<h4 id="19-正则表达式匹配"><a href="#19-正则表达式匹配" class="headerlink" title="19. 正则表达式匹配"></a>19. 正则表达式匹配</h4><p>动态规划/dfs</p>
+<h4 id="20-表示数值的字符串"><a href="#20-表示数值的字符串" class="headerlink" title="20. 表示数值的字符串"></a>20. 表示数值的字符串</h4><p>有限状态机</p>
+<h4 id="21-调整数组顺序使奇数位于偶数前"><a href="#21-调整数组顺序使奇数位于偶数前" class="headerlink" title="21. 调整数组顺序使奇数位于偶数前"></a>21. 调整数组顺序使奇数位于偶数前</h4><p>双指针，左遇偶停，右遇奇停</p>
+<h4 id="24-反转链表"><a href="#24-反转链表" class="headerlink" title="24. 反转链表"></a>24. 反转链表</h4><p>双指针，一个在前一个在后，调整 next</p>
+<h4 id="30-包含-min-函数的栈"><a href="#30-包含-min-函数的栈" class="headerlink" title="30. 包含 min 函数的栈"></a>30. 包含 min 函数的栈</h4><p>建立辅助栈，存储栈中所有非严格降序的元素，辅助栈中栈顶元素始终是最小值</p>
+<h4 id="31-栈的压入、弹出序列"><a href="#31-栈的压入、弹出序列" class="headerlink" title="31. 栈的压入、弹出序列"></a>31. 栈的压入、弹出序列</h4><p>辅助栈模拟 push pop</p>
+<h4 id="33-二叉查找树的后序遍历序列"><a href="#33-二叉查找树的后序遍历序列" class="headerlink" title="33. 二叉查找树的后序遍历序列"></a>33. 二叉查找树的后序遍历序列</h4><p>根据大小比较划分左右子树，验证左右子树区间的单调性</p>
+<h4 id="34-二叉树中和为某一值的路径"><a href="#34-二叉树中和为某一值的路径" class="headerlink" title="34. 二叉树中和为某一值的路径"></a>34. 二叉树中和为某一值的路径</h4><p>回溯，target 减遍历到的每个值</p>
+<h4 id="35-复杂链表的复制"><a href="#35-复杂链表的复制" class="headerlink" title="35. 复杂链表的复制"></a>35. 复杂链表的复制</h4><p>dfs + 哈希表</p>
+<h4 id="36-二叉搜索树与双向链表"><a href="#36-二叉搜索树与双向链表" class="headerlink" title="36. 二叉搜索树与双向链表"></a>36. 二叉搜索树与双向链表</h4><p>中序遍历 + dfs</p>
+<h4 id="38-字符串的排列"><a href="#38-字符串的排列" class="headerlink" title="38. 字符串的排列"></a>38. 字符串的排列</h4><p>dfs</p>
+<h4 id="39-数组中出现次数超过一半的数字"><a href="#39-数组中出现次数超过一半的数字" class="headerlink" title="39. 数组中出现次数超过一半的数字"></a>39. 数组中出现次数超过一半的数字</h4><p>摩尔投票法，假设是当前数，票数为 0 抵消</p>
+<h4 id="40-最小的-k-个数"><a href="#40-最小的-k-个数" class="headerlink" title="40. 最小的 k 个数"></a>40. 最小的 k 个数</h4><p>最大堆实现</p>
+<h2 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h2><h4 id="3-无重复字符的最长字串"><a href="#3-无重复字符的最长字串" class="headerlink" title="3. 无重复字符的最长字串"></a>3. 无重复字符的最长字串</h4><p>滑窗，建 hash table，判断下一个字符是否在表，若在则 update table 并缩短滑窗。时间 n</p>
+<h4 id="5-最长回文子串"><a href="#5-最长回文子串" class="headerlink" title="5. 最长回文子串"></a>5. 最长回文子串</h4><p>中心扩散。时间 n^2，空间 1</p>
+<h4 id="7-整数反转"><a href="#7-整数反转" class="headerlink" title="7. 整数反转"></a>7. 整数反转</h4><p>原数 pop，reverse push，注意检查溢出：INT_MAX/10</p>
+<h4 id="9-回文数"><a href="#9-回文数" class="headerlink" title="9. 回文数"></a>9. 回文数</h4><p>原数 pop，reverse push，直到 原数 &lt; reverse，判断 原数是否 == reverse，或者 == reverse / 10。时间 log n</p>
+<h4 id="11-盛最多水的容器"><a href="#11-盛最多水的容器" class="headerlink" title="11. 盛最多水的容器"></a>11. 盛最多水的容器</h4><p>双指针，计算容纳的水量，数字较小的指针向内移动，再次计算。时间 n，空间 1</p>
+<h4 id="15-三数之和"><a href="#15-三数之和" class="headerlink" title="15. 三数之和"></a>15. 三数之和</h4><p>排序 + 双指针，a + b + c &gt; target 就将 c 左移一个，排序时间 n log n，双指针时间 n^2，总时间 n^2。空间 log n</p>
+<h4 id="16-最接近的三数之和"><a href="#16-最接近的三数之和" class="headerlink" title="16. 最接近的三数之和"></a>16. 最接近的三数之和</h4><p>排序 + 双指针，a + b + c &gt;= target 将 c 左移，&lt; target 将 b 右移</p>
+<h4 id="17-电话号码的字母组合"><a href="#17-电话号码的字母组合" class="headerlink" title="17. 电话号码的字母组合"></a>17. 电话号码的字母组合</h4><p>回溯/队列，依次组合</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/author-cloxnu/" rel="tag"># author: cloxnu</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/18/ios-summary/" rel="prev" title="iOS 基础总结">
+      <i class="fa fa-chevron-left"></i> iOS 基础总结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/29/fxxk-interview/" rel="next" title="面试精选">
+      面试精选 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%91%E6%8C%87-Offer"><span class="nav-number">1.</span> <span class="nav-text">剑指 Offer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE"><span class="nav-number">1.0.1.</span> <span class="nav-text">4. 二维数组中的查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98"><span class="nav-number">1.0.2.</span> <span class="nav-text">10 - II. 青蛙跳台阶问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97"><span class="nav-number">1.0.3.</span> <span class="nav-text">11. 旋转数组的最小数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="nav-number">1.0.4.</span> <span class="nav-text">12. 矩阵中的路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4"><span class="nav-number">1.0.5.</span> <span class="nav-text">13. 机器人的运动范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD-1-%E7%9A%84%E4%B8%AA%E6%95%B0"><span class="nav-number">1.0.6.</span> <span class="nav-text">15. 二进制中 1 的个数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9"><span class="nav-number">1.0.7.</span> <span class="nav-text">16. 数值的整数次方</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-%E6%89%93%E5%8D%B0%E4%BB%8E-1-%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84-n-%E4%BD%8D%E6%95%B0"><span class="nav-number">1.0.8.</span> <span class="nav-text">17. 打印从 1 到最大的 n 位数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D"><span class="nav-number">1.0.9.</span> <span class="nav-text">19. 正则表达式匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.0.10.</span> <span class="nav-text">20. 表示数值的字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#21-%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D"><span class="nav-number">1.0.11.</span> <span class="nav-text">21. 调整数组顺序使奇数位于偶数前</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="nav-number">1.0.12.</span> <span class="nav-text">24. 反转链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#30-%E5%8C%85%E5%90%AB-min-%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88"><span class="nav-number">1.0.13.</span> <span class="nav-text">30. 包含 min 函数的栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#31-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97"><span class="nav-number">1.0.14.</span> <span class="nav-text">31. 栈的压入、弹出序列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33-%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97"><span class="nav-number">1.0.15.</span> <span class="nav-text">33. 二叉查找树的后序遍历序列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#34-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="nav-number">1.0.16.</span> <span class="nav-text">34. 二叉树中和为某一值的路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#35-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6"><span class="nav-number">1.0.17.</span> <span class="nav-text">35. 复杂链表的复制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#36-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8"><span class="nav-number">1.0.18.</span> <span class="nav-text">36. 二叉搜索树与双向链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97"><span class="nav-number">1.0.19.</span> <span class="nav-text">38. 字符串的排列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#39-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97"><span class="nav-number">1.0.20.</span> <span class="nav-text">39. 数组中出现次数超过一半的数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#40-%E6%9C%80%E5%B0%8F%E7%9A%84-k-%E4%B8%AA%E6%95%B0"><span class="nav-number">1.0.21.</span> <span class="nav-text">40. 最小的 k 个数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Leetcode"><span class="nav-number">2.</span> <span class="nav-text">Leetcode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2"><span class="nav-number">2.0.1.</span> <span class="nav-text">3. 无重复字符的最长字串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2"><span class="nav-number">2.0.2.</span> <span class="nav-text">5. 最长回文子串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC"><span class="nav-number">2.0.3.</span> <span class="nav-text">7. 整数反转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-%E5%9B%9E%E6%96%87%E6%95%B0"><span class="nav-number">2.0.4.</span> <span class="nav-text">9. 回文数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">2.0.5.</span> <span class="nav-text">11. 盛最多水的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">2.0.6.</span> <span class="nav-text">15. 三数之和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">2.0.7.</span> <span class="nav-text">16. 最接近的三数之和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88"><span class="nav-number">2.0.8.</span> <span class="nav-text">17. 电话号码的字母组合</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Bi~Bi~Boom"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Bi~Bi~Boom</p>
+  <div class="site-description" itemprop="description">A team dedicated to boom.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/bi-bi-boom" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;bi-bi-boom" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:bi.bi.boom@outlook.com" title="E-Mail → mailto:bi.bi.boom@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Copyright © 2020 Bi~Bi~Boom. All rights reserved.</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">20k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">18 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'E4e1C2SShY20hUHd4IagsYRz-gzGzoHsz',
+      appKey     : 'KMBBAmzBWSbLk4R9ERjrACHw',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

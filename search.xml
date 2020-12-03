@@ -443,4 +443,243 @@
         <category>TEST</category>
       </categories>
   </entry>
+  <entry>
+    <title>算法刷题记录</title>
+    <url>/2020/11/21/algorithm-exercise/</url>
+    <content><![CDATA[<h2 id="剑指-Offer"><a href="#剑指-Offer" class="headerlink" title="剑指 Offer"></a>剑指 Offer</h2><a id="more"></a>
+
+<h4 id="4-二维数组中的查找"><a href="#4-二维数组中的查找" class="headerlink" title="4. 二维数组中的查找"></a>4. 二维数组中的查找</h4><p>从数组右上角（或左下角）开始找，遇到比 target 小的向下（右）找，遇到比 target 大的向左（上）找。</p>
+<h4 id="10-II-青蛙跳台阶问题"><a href="#10-II-青蛙跳台阶问题" class="headerlink" title="10 - II. 青蛙跳台阶问题"></a>10 - II. 青蛙跳台阶问题</h4><p>本题可转化为 <strong>求斐波那契数列第 n 项的值</strong>，使用动态规划求解</p>
+<h4 id="11-旋转数组的最小数字"><a href="#11-旋转数组的最小数字" class="headerlink" title="11. 旋转数组的最小数字"></a>11. 旋转数组的最小数字</h4><p>二分查找：将中间值与最后一个值比较，若大，将 left = mid + 1，若小，将 right = mid，若等，则 right -= 1</p>
+<h4 id="12-矩阵中的路径"><a href="#12-矩阵中的路径" class="headerlink" title="12. 矩阵中的路径"></a>12. 矩阵中的路径</h4><p>本质上是图的深搜，使用递归求解</p>
+<h4 id="13-机器人的运动范围"><a href="#13-机器人的运动范围" class="headerlink" title="13. 机器人的运动范围"></a>13. 机器人的运动范围</h4><p>广搜模板题</p>
+<h4 id="15-二进制中-1-的个数"><a href="#15-二进制中-1-的个数" class="headerlink" title="15. 二进制中 1 的个数"></a>15. 二进制中 1 的个数</h4><p>巧用 n &amp; (n-1)</p>
+<h4 id="16-数值的整数次方"><a href="#16-数值的整数次方" class="headerlink" title="16. 数值的整数次方"></a>16. 数值的整数次方</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> n:</span><br><span class="line">    <span class="keyword">if</span> n &amp; <span class="number">1</span>: res *= x</span><br><span class="line">    x *= x</span><br><span class="line">    n &gt;&gt;= <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="17-打印从-1-到最大的-n-位数"><a href="#17-打印从-1-到最大的-n-位数" class="headerlink" title="17. 打印从 1 到最大的 n 位数"></a>17. 打印从 1 到最大的 n 位数</h4><p>有点深搜的意思</p>
+<h4 id="19-正则表达式匹配"><a href="#19-正则表达式匹配" class="headerlink" title="19. 正则表达式匹配"></a>19. 正则表达式匹配</h4><p>动态规划/dfs</p>
+<h4 id="20-表示数值的字符串"><a href="#20-表示数值的字符串" class="headerlink" title="20. 表示数值的字符串"></a>20. 表示数值的字符串</h4><p>有限状态机</p>
+<h4 id="21-调整数组顺序使奇数位于偶数前"><a href="#21-调整数组顺序使奇数位于偶数前" class="headerlink" title="21. 调整数组顺序使奇数位于偶数前"></a>21. 调整数组顺序使奇数位于偶数前</h4><p>双指针，左遇偶停，右遇奇停</p>
+<h4 id="24-反转链表"><a href="#24-反转链表" class="headerlink" title="24. 反转链表"></a>24. 反转链表</h4><p>双指针，一个在前一个在后，调整 next</p>
+<h4 id="30-包含-min-函数的栈"><a href="#30-包含-min-函数的栈" class="headerlink" title="30. 包含 min 函数的栈"></a>30. 包含 min 函数的栈</h4><p>建立辅助栈，存储栈中所有非严格降序的元素，辅助栈中栈顶元素始终是最小值</p>
+<h4 id="31-栈的压入、弹出序列"><a href="#31-栈的压入、弹出序列" class="headerlink" title="31. 栈的压入、弹出序列"></a>31. 栈的压入、弹出序列</h4><p>辅助栈模拟 push pop</p>
+<h4 id="33-二叉查找树的后序遍历序列"><a href="#33-二叉查找树的后序遍历序列" class="headerlink" title="33. 二叉查找树的后序遍历序列"></a>33. 二叉查找树的后序遍历序列</h4><p>根据大小比较划分左右子树，验证左右子树区间的单调性</p>
+<h4 id="34-二叉树中和为某一值的路径"><a href="#34-二叉树中和为某一值的路径" class="headerlink" title="34. 二叉树中和为某一值的路径"></a>34. 二叉树中和为某一值的路径</h4><p>回溯，target 减遍历到的每个值</p>
+<h4 id="35-复杂链表的复制"><a href="#35-复杂链表的复制" class="headerlink" title="35. 复杂链表的复制"></a>35. 复杂链表的复制</h4><p>dfs + 哈希表</p>
+<h4 id="36-二叉搜索树与双向链表"><a href="#36-二叉搜索树与双向链表" class="headerlink" title="36. 二叉搜索树与双向链表"></a>36. 二叉搜索树与双向链表</h4><p>中序遍历 + dfs</p>
+<h4 id="38-字符串的排列"><a href="#38-字符串的排列" class="headerlink" title="38. 字符串的排列"></a>38. 字符串的排列</h4><p>dfs</p>
+<h4 id="39-数组中出现次数超过一半的数字"><a href="#39-数组中出现次数超过一半的数字" class="headerlink" title="39. 数组中出现次数超过一半的数字"></a>39. 数组中出现次数超过一半的数字</h4><p>摩尔投票法，假设是当前数，票数为 0 抵消</p>
+<h4 id="40-最小的-k-个数"><a href="#40-最小的-k-个数" class="headerlink" title="40. 最小的 k 个数"></a>40. 最小的 k 个数</h4><p>最大堆实现</p>
+<h2 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h2><h4 id="3-无重复字符的最长字串"><a href="#3-无重复字符的最长字串" class="headerlink" title="3. 无重复字符的最长字串"></a>3. 无重复字符的最长字串</h4><p>滑窗，建 hash table，判断下一个字符是否在表，若在则 update table 并缩短滑窗。时间 n</p>
+<h4 id="5-最长回文子串"><a href="#5-最长回文子串" class="headerlink" title="5. 最长回文子串"></a>5. 最长回文子串</h4><p>中心扩散。时间 n^2，空间 1</p>
+<h4 id="7-整数反转"><a href="#7-整数反转" class="headerlink" title="7. 整数反转"></a>7. 整数反转</h4><p>原数 pop，reverse push，注意检查溢出：INT_MAX/10</p>
+<h4 id="9-回文数"><a href="#9-回文数" class="headerlink" title="9. 回文数"></a>9. 回文数</h4><p>原数 pop，reverse push，直到 原数 &lt; reverse，判断 原数是否 == reverse，或者 == reverse / 10。时间 log n</p>
+<h4 id="11-盛最多水的容器"><a href="#11-盛最多水的容器" class="headerlink" title="11. 盛最多水的容器"></a>11. 盛最多水的容器</h4><p>双指针，计算容纳的水量，数字较小的指针向内移动，再次计算。时间 n，空间 1</p>
+<h4 id="15-三数之和"><a href="#15-三数之和" class="headerlink" title="15. 三数之和"></a>15. 三数之和</h4><p>排序 + 双指针，a + b + c &gt; target 就将 c 左移一个，排序时间 n log n，双指针时间 n^2，总时间 n^2。空间 log n</p>
+<h4 id="16-最接近的三数之和"><a href="#16-最接近的三数之和" class="headerlink" title="16. 最接近的三数之和"></a>16. 最接近的三数之和</h4><p>排序 + 双指针，a + b + c &gt;= target 将 c 左移，&lt; target 将 b 右移</p>
+<h4 id="17-电话号码的字母组合"><a href="#17-电话号码的字母组合" class="headerlink" title="17. 电话号码的字母组合"></a>17. 电话号码的字母组合</h4><p>回溯/队列，依次组合</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>author: cloxnu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS 基础总结</title>
+    <url>/2020/11/18/ios-summary/</url>
+    <content><![CDATA[<h2 id="GCD"><a href="#GCD" class="headerlink" title="GCD"></a>GCD</h2><ul>
+<li>Grand Central Dispatch (GCD) 是异步执行任务的技术之一。开发者只需定义像执行的任务并追加到适当的 Dispatch Queue 中，GCD 就能生成必要的线程并计划执行任务。</li>
+<li><strong>为什么需要长时间处理的任务应该在其他线程进行？</strong> 主线程是用来描绘用户界面、处理触摸屏幕的，如果在主线程执行长时间处理的任务，会妨碍主线程中被称为 RunLoop 的主循环的执行，从而导致不能更新用户界面、应用程序的画面长时间停滞。<a id="more"></a></li>
+<li>Serial Dispatch Queue 是等待现在执行中处理</li>
+<li>Concurrent Dispatch Queue 是不等待现在执行中处理</li>
+<li>Serial Dispatch Queue 虽然可以使用 <code>dispatch_queue_create</code> 生成无数个线程，就可以并行执行，但是大量生成会使系统响应性能大幅度降低，Serial Dispatch Queue 主要用来避免数据竞争</li>
+<li>Main Dispatch Queue 在主线程执行，更新用户界面必须在主线程执行，类型是 Serial Dispatch Queue</li>
+<li>Global Dispatch Queue 是所有应用程序都能够使用的 Concurrent Dispatch Queue，有高、默认、低、后台四个优先级</li>
+<li><code>dispatch_after</code> 在指定时间追加处理到 Dispatch Queue</li>
+<li>Dispatch Group 可以用 <code>dispatch_group_notify</code> 或 <code>dispatch_group_wait</code> 等待 Dispatch Group 执行结束</li>
+<li><code>dispatch_barrier_async</code> 会等待追加到 Concurrent Dispatch Queue 上的并行执行的处理全部结束后，再将指定的处理追加到该 CDQ 中。然后处理完后，再去处理后面的 CDQ</li>
+<li><code>dispatch_apply</code> 用来按指定次数将指定的 block 追加到指定的 Dispatch Queue 中</li>
+<li><code>dispatch_once</code> 保证只执行一次</li>
+</ul>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><ul>
+<li>自动引用计数 ARC Automatic Reference Counting 内存管理中对引用采取自动计数的技术<ol>
+<li>自己生成的对象，自己所持有 <code>NSObject * __strong obj = [[NSObject alloc] init];</code></li>
+<li>非自己生成的对象，自己也能持有 <code>NSMutableArray * __strong array = [NSMutableArray array];</code></li>
+<li>不再需要自己持有的对象时释放</li>
+<li>非自己持有的对象无法释放<blockquote>
+<p>生成并持有对象：<code>alloc/new/copy/mutablecopy</code> 等<br>持有对象：<code>retain</code><br>释放对象：<code>release</code><br>废弃对象：<code>dealloc</code>  </p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li> 「strong」对应所有权类型是 <code>__strong</code> 指向并持有对象，引用计数会+1，引用计数为 0 才会销毁，为 nil 会销毁</li>
+<li>「weak」对应所有权类型是 <code>__weak</code> 指向但不持有对象，引用计数不会+1</li>
+<li>「__unsafe_unretained」和 weak 类似，不同的是弱引用的对象废弃后此对象不会被赋值为 nil，为悬垂指针，继续方法可能会导致访问错误</li>
+<li>「assign」对应所有权类型是 <code>__unsafe_unretained</code> 修饰基本数据类型，存储在栈中</li>
+<li>「copy」对应所有权类型是 <code>__strong</code> 和 strong 类似，多用于修饰有可变类型的不可变对象</li>
+<li>「__autoreleasing」与直接调用 autorelease 方法等价，前提是用 @autorelease 块替换 NSAutoreleasePool</li>
+<li>「__strong」修饰符是 id 类型和对象类型默认的所有权修饰符，而「__autoreleasing」是 id 的指针或对象的指针默认的所有权修饰符</li>
+<li><code>NSZone</code> 为了防止内存碎片化</li>
+</ul>
+]]></content>
+      <categories>
+        <category>iOS</category>
+        <category>基础</category>
+      </categories>
+      <tags>
+        <tag>author: cloxnu</tag>
+        <tag>Swift</tag>
+        <tag>Objective-C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C语言 const 关键字的使用场景</title>
+    <url>/2020/12/03/C-const-md/</url>
+    <content><![CDATA[<h2 id="const-限定的变量"><a href="#const-限定的变量" class="headerlink" title="const 限定的变量"></a>const 限定的变量</h2><ul>
+<li><p>被 const 声明的变量，在定义时赋值，然后后面就不能修改变量的值了。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> num = <span class="number">25</span>;<span class="comment">//定义 int 类型的 num 并且赋值</span></span><br><span class="line"><span class="comment">//num = 20;//num 为被 const 限定，不能再修改</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="补充一下：指针——也称为指针变量"><a href="#补充一下：指针——也称为指针变量" class="headerlink" title="补充一下：指针——也称为指针变量"></a>补充一下：指针——也称为<strong>指针变量</strong></h2><ul>
+<li><p>指针的使用</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> number = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;number ;   <span class="comment">//定义一个 int 类型的【指针变量】p  (* 号作为一个标识符，代表这是一个指针),然后 p 指向 number</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="const-和指针变量的结合"><a href="#const-和指针变量的结合" class="headerlink" title="const 和指针变量的结合"></a>const 和指针变量的结合</h2><ul>
+<li><p>指向 【常量】的【指针变量】</p>
+<p>  写成const int *p = &amp;a ;</p>
+<p>  或者int const *p = &amp;a ;</p>
+<p>  都可以</p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">25</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;a ;<span class="comment">//定义 int 类型的指针变量， 指向 a//也可以</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//*p = 20;//尝试通过指针p修改 a 的值，不能的，因为 p 指向的 a 被 const 限定了。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dog = <span class="number">50</span>;</span><br><span class="line">p = &amp;a;<span class="comment">//修改 p 的指向，可以的，因为 p 是一个指针变量，是一个可变的值。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指针常量，也称为const类型指针。</p>
+<p>const 写在 * 后面</p>
+<blockquote>
+<p>int * const ptr = &n;</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">30</span>;</span><br><span class="line"><span class="keyword">int</span>  * <span class="keyword">const</span> ptr = &amp;n;<span class="comment">//指针不能变，但指向的内容（n）可以变</span></span><br><span class="line">*ptr = <span class="number">20</span>;            <span class="comment">//可以实现。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指向【常量】的【指针常量】</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//【非常量】的地址给指向【常量】的【指针变量】是安全的</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> ptr = &amp;n;<span class="comment">//指针不能变，指向的内容(n)也不能变</span></span><br><span class="line"><span class="comment">//*ptr = 20;               //第一个 const 限定了 ptr 指向的内容不能被修改，所以这里会编译不通过。</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="const-的坑"><a href="#const-的坑" class="headerlink" title="const 的坑"></a>const 的坑</h2><p>常量：被 const 限定</p>
+<p>变量：未被 const 限定</p>
+<ul>
+<li><p>常量（被 const 限定）的地址，赋给不带 const 的指针是不安全的。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;a;<span class="comment">//很不安全</span></span><br><span class="line">*p=<span class="number">20</span>;      <span class="comment">//不安全的操作(Visual studio 不能编译，但 gcc 可以，只是 会有警告，最后可以运行，并且 a 的值会被改变)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>（常量或者变量）的地址，可以赋给带 const 的 int 指针</p>
+<p>比如，下列函数只需要读取 a 的值用作显示，那么不需要修改 a，使用const可以防止 a 在函数体内被修改。而在调用时，给函数传递的 int 类型参数的地址,可以是 const 或者非 const 都可以。</p>
+<p>函数拿到地址之后，只做读取而不修改</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *a)</span></span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="二级指针不安全"><a href="#二级指针不安全" class="headerlink" title="二级指针不安全"></a>二级指针不安全</h2><ul>
+<li><p>例子</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> n = <span class="number">8</span>;<span class="comment">//本意是 n 的值不能改变</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * p1;</span><br><span class="line">p1 = &amp;n;</span><br><span class="line"><span class="keyword">int</span> ** pp2;</span><br><span class="line">pp2 = &amp;p1;     <span class="comment">//不安全，不能使用 const int **，初始化 int **pp2</span></span><br><span class="line"></span><br><span class="line">**pp2 = <span class="number">10</span>;    <span class="comment">//通过pp2修改到了n的值，违背本意。</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;n:%d\n&quot;</span>,n);</span><br></pre></td></tr></table></figure>
+
+<p>(Visual studio会自动检测这种情况从而不让编译通过，但是C语言本身是可以编译通过的,只是会有下面的警告)</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span>.c: 在函数‘main’中:</span><br><span class="line"><span class="keyword">new</span>.c:<span class="number">11</span>:<span class="number">8</span>: 警告：从不兼容的指针类型赋值 [-Wincompatible-pointer-types]</span><br><span class="line">  pp2 = &amp;p1;</span><br><span class="line">      ^</span><br><span class="line"><span class="keyword">new</span>.c:<span class="number">15</span>:<span class="number">4</span>: 警告：隐式声明函数‘system’ [-Wimplicit-function-declaration]</span><br><span class="line">  system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>gcc编译之后运行程序，结果n可以打印出来就是10</p>
+<p>小结：<strong>n 被 const 限定了，但是却可以通过二级指针绕过这个限定</strong>，所以二级指针在误用的情况下很不安全。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>author: zanxinz</tag>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试精选</title>
+    <url>/2020/11/29/fxxk-interview/</url>
+    <content><![CDATA[<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>操作系统是控制应用程序执行的程序，是应用程序和计算机硬件间的接口</p>
+<ul>
+<li><strong>方便</strong>：操作系统使计算机更易于使用</li>
+<li><strong>有效</strong>：操作系统允许以更有效地方式使用计算机系统资源</li>
+<li><strong>扩展能力</strong>：在构造操作系统时，应允许在不妨碍服务的前提下，有效地开发、测试和引入新的系统功能</li>
+</ul>
+<a id="more"></a>
+
+<h4 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h4><h5 id="Q-区别？"><a href="#Q-区别？" class="headerlink" title="Q: 区别？"></a>Q: 区别？</h5><ul>
+<li><strong>「进程」</strong> <strong>是操作系统资源分配的基本单位</strong>。</li>
+<li><strong>「线程」</strong> <strong>是任务调度和执行的基本单位</strong>。</li>
+</ul>
+<p>在开销方面：每个进程都有独立的代码和数据空间（程序上下文），程序之间的切换会有较大的开销；线程可以看做轻量级的进程，同一类线程共享代码和数据空间，每个线程都有自己独立的运行栈和程序计数器（PC），线程之间切换的开销小。</p>
+<p>所处环境：在操作系统中能同时运行多个进程（程序）；而在同一个进程（程序）中有多个线程同时执行（通过CPU调度，在每个时间片中只有一个线程执行）</p>
+<p>内存分配方面：系统在运行的时候会为每个进程分配不同的内存空间；而对线程而言，除了CPU外，系统不会为线程分配内存（线程所使用的资源来自其所属进程的资源），线程组之间只能共享资源。</p>
+<p>包含关系：只有一个线程的进程可以看做是单进程的，如果一个进程内有多个线程，则执行过程不是一条线的，而是多条线（线程）共同完成的；线程是进程的一部分，所以线程也被称为轻权进程或者轻量级进程。</p>
+<p><a href="https://blog.csdn.net/kuangsonghan/article/details/80674777">以上参考</a></p>
+<p><a href="https://hit-alibaba.github.io/interview/basic/arch/Concurrency.html">分时系统、多任务</a></p>
+<h5 id="Q-五状态模型？"><a href="#Q-五状态模型？" class="headerlink" title="Q: 五状态模型？"></a>Q: 五状态模型？</h5><ul>
+<li><strong>「运行态」</strong> 进程正在执行</li>
+<li><strong>「就绪态」</strong> 进程做好了准备，只要有机会就开始执行</li>
+<li><strong>「阻塞/等待态」</strong> 进程在某些事件发生前不能执行，如 I/O 操作完成</li>
+<li><strong>「新建态」</strong> 刚刚创建的进程，操作系统还未把它加入可执行进程组，它通常是进程控制块已经创建但还未加载到内存中的新进程</li>
+<li><strong>「退出态」</strong> 操作系统从可执行进程组中释放出的进程，要么它自己已停止，要么它因某种原因被取消</li>
+</ul>
+<h5 id="Q-并发技术？"><a href="#Q-并发技术？" class="headerlink" title="Q: 并发技术？"></a>Q: 并发技术？</h5><ul>
+<li><strong>「原子操作」</strong> 一个函数或动作由一个或多个指令的序列实现，对外不可见</li>
+<li><strong>「临界区」</strong> 一段代码，在这段代码中进程将访问共享资源，当另外一个进程已在这段代码中运行时，这个进程就不能在这段代码中执行</li>
+<li><strong>「互斥」</strong> 当一个进程在临界区访问共享资源时，其他进程不能进入该临界区访问任何共享资源的情形</li>
+<li><strong>「死锁」</strong> 两个或两个以上的进程因每个进程都在等待其他进程做完某些事情而不能继续执行的情形</li>
+<li><strong>「活锁」</strong> 两个或两个以上的进程为响应其他进程中的变化而持续改变自己的状态但不能做有用的工作的情形</li>
+<li><strong>「竞争条件」</strong> 多个线程或进程在读写一个共享数据时，结果依赖于它们执行的相对时间的情形</li>
+<li><strong>「饥饿」</strong> 一个可运行的进程尽管能继续执行，但被调度程序无限期地忽视，而不能被调度执行的情形</li>
+</ul>
+<p><a href="https://cloud.tencent.com/developer/article/1404062">一文看懂临界区、互斥锁、同步锁、临界区、信号量、自旋锁等名词</a></p>
+<p>在操作系统中，进程是占有资源的最小单位（线程可以访问其所在进程内的所有资源，但线程本身并不占有资源或仅仅占有一点必须资源）。但对于某些资源来说，其在同一时间只能被一个进程所占用。这些一次只能被一个进程所占用的资源就是所谓的临界资源。</p>
+<p>对于临界资源的访问，必须是互斥进行。也就是当临界资源被占用时，另一个申请临界资源的进程会被阻塞，直到其所申请的临界资源被释放。而进程内访问临界资源的代码被成为临界区。</p>
+<ul>
+<li><p><strong>「信号量」</strong> 把互斥锁推广到”N”的空间，同时允许有N个线程进入临界区的锁叫“信号量”。互斥量和信号量的实现都依赖TSL指令保证“检查-占锁”动作的原子性。</p>
+</li>
+<li><p><strong>「信号量」</strong> 用于进程间传递信号的一个整数值。在信号量上只可进行三种操作：初始化，递减和增加，这三种操作都是原子操作。递减阻塞进程，递增解除进程阻塞。</p>
+</li>
+<li><p><strong>「二元信号量」</strong> 只取 0 和 1 的信号量</p>
+</li>
+<li><p><strong>「管程」</strong> 把互斥量交给程序员使用太危险，有些编程语言实现了“管程”的特性，从编译器的层面保证了临界区的互斥，比如Java的synchronized关键字。</p>
+</li>
+<li><p><strong>「管程」</strong> 是由一种程序设计语言结构，它提供的功能与信号量相同，但更易于控制。</p>
+</li>
+<li><p><strong>「事件」</strong> 对象也可以通过通知操作的方式来保持线程的同步。并且可以实现不同进程中的线程同步操作。 </p>
+</li>
+</ul>
+<h5 id="Q-互斥锁？自旋锁？"><a href="#Q-互斥锁？自旋锁？" class="headerlink" title="Q: 互斥锁？自旋锁？"></a>Q: 互斥锁？自旋锁？</h5><p>对于互斥锁来说，如果一个线程已经锁定了一个互斥锁，第二个线程又试图去获得这个互斥锁，则第二个线程将被挂起（即休眠，不占用 CPU 资源）。</p>
+<p>在计算机系统中，频繁的挂起和切换线程，也是有成本的。自旋锁就是解决这个问题的。</p>
+<p>自旋锁，指当一个线程在获取锁的时候，如果锁已经被其它线程获取，那么该线程将循环等待，然后不断的判断锁是否能够被成功获取，直到获取到锁才会退出循环。</p>
+<p>容易看出，当资源等待的时间较长，用互斥锁让线程休眠，会消耗更少的资源。当资源等待的时间较短时，使用自旋锁将减少线程的切换，获得更高的性能。</p>
+<h5 id="Q-重入锁？不可重入锁？"><a href="#Q-重入锁？不可重入锁？" class="headerlink" title="Q: 重入锁？不可重入锁？"></a>Q: 重入锁？不可重入锁？</h5><p>可重入锁（ReetrantLock），也叫做递归锁，指的是在同一线程内，外层函数获得锁之后，内层递归函数仍然可以获取到该锁。换一种说法：同一个线程再次进入同步代码时，可以使用自己已获取到的锁。</p>
+<p>使用可重入锁时，在同一线程中多次获取锁，不会导致死锁。使用不可重入锁，则会导致死锁发生。</p>
+<p><a href="https://hit-alibaba.github.io/interview/basic/arch/Concurrency.html">参考</a></p>
+<h5 id="Q-死锁的条件？"><a href="#Q-死锁的条件？" class="headerlink" title="Q: 死锁的条件？"></a>Q: 死锁的条件？</h5><ul>
+<li><strong>「互斥」</strong> 一次只有一个进程可以使用一个资源。其他进程不能访问已分配给其他进程的资源。</li>
+<li><strong>「占有且等待」</strong> 当一个进程等待其他进程时，继续占有已分配的资源</li>
+<li><strong>「不可抢占」</strong> 不能强行抢占进程已占有的资源</li>
+<li><strong>「循环等待」</strong> 存在一个闭合的进程链，每个进程至少占有此链中下一个进程所需的一个资源</li>
+</ul>
+<h5 id="Q-进程间通信？"><a href="#Q-进程间通信？" class="headerlink" title="Q: 进程间通信？"></a>Q: 进程间通信？</h5><ul>
+<li><strong>「管道」</strong> 命名管道和匿名管道，只有具有“血缘”关系的进程才可共享匿名管道，而不相关的进程只能共享命名管道</li>
+<li><strong>「消息」</strong> 是有类型的一段文本。每个进程都有一个与之相关联的消息队列，其功能类似于信箱</li>
+<li><strong>「共享内存」</strong> 是 UNIX 所提供的进程间通信手段中速度最快的一种。虚存中由多个进程共享的一个公共内存块。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>author: cloxnu</tag>
+      </tags>
+  </entry>
 </search>
