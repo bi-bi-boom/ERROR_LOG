@@ -211,7 +211,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-12-03 13:03:26 / 修改时间：13:05:27" itemprop="dateCreated datePublished" datetime="2020-12-03T13:03:26+08:00">2020-12-03</time>
+              <time title="创建时间：2020-12-03 13:03:26 / 修改时间：13:12:56" itemprop="dateCreated datePublished" datetime="2020-12-03T13:03:26+08:00">2020-12-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,56 +268,14 @@
 
 </li>
 </ul>
-<h2 id="补充一下：指针——也称为指针变量"><a href="#补充一下：指针——也称为指针变量" class="headerlink" title="补充一下：指针——也称为指针变量"></a>补充一下：指针——也称为<strong>指针变量</strong></h2><ul>
-<li><p>指针的使用</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> number = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;number ;   <span class="comment">//定义一个 int 类型的【指针变量】p  (* 号作为一个标识符，代表这是一个指针),然后 p 指向 number</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="const-和指针变量的结合"><a href="#const-和指针变量的结合" class="headerlink" title="const 和指针变量的结合"></a>const 和指针变量的结合</h2><ul>
-<li><p>指向 【常量】的【指针变量】</p>
-<p>  写成const int *p = &amp;a ;</p>
-<p>  或者int const *p = &amp;a ;</p>
-<p>  都可以</p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">25</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;a ;<span class="comment">//定义 int 类型的指针变量， 指向 a//也可以</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//*p = 20;//尝试通过指针p修改 a 的值，不能的，因为 p 指向的 a 被 const 限定了。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dog = <span class="number">50</span>;</span><br><span class="line">p = &amp;a;<span class="comment">//修改 p 的指向，可以的，因为 p 是一个指针变量，是一个可变的值。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>指针常量，也称为const类型指针。</p>
-<p>const 写在 * 后面</p>
-<blockquote>
-<p>int * const ptr = &n;</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">30</span>;</span><br><span class="line"><span class="keyword">int</span>  * <span class="keyword">const</span> ptr = &amp;n;<span class="comment">//指针不能变，但指向的内容（n）可以变</span></span><br><span class="line">*ptr = <span class="number">20</span>;            <span class="comment">//可以实现。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>指向【常量】的【指针常量】</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//【非常量】的地址给指向【常量】的【指针变量】是安全的</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> ptr = &amp;n;<span class="comment">//指针不能变，指向的内容(n)也不能变</span></span><br><span class="line"><span class="comment">//*ptr = 20;               //第一个 const 限定了 ptr 指向的内容不能被修改，所以这里会编译不通过。</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="const-的坑"><a href="#const-的坑" class="headerlink" title="const 的坑"></a>const 的坑</h2><p>常量：被 const 限定</p>
-<p>变量：未被 const 限定</p>
-<ul>
-<li><p>常量（被 const 限定）的地址，赋给不带 const 的指针是不安全的。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;a;<span class="comment">//很不安全</span></span><br><span class="line">*p=<span class="number">20</span>;      <span class="comment">//不安全的操作(Visual studio 不能编译，但 gcc 可以，只是 会有警告，最后可以运行，并且 a 的值会被改变)</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>（常量或者变量）的地址，可以赋给带 const 的 int 指针</p>
-<p>比如，下列函数只需要读取 a 的值用作显示，那么不需要修改 a，使用const可以防止 a 在函数体内被修改。而在调用时，给函数传递的 int 类型参数的地址,可以是 const 或者非 const 都可以。</p>
-<p>函数拿到地址之后，只做读取而不修改</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *a)</span></span>;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="二级指针不安全"><a href="#二级指针不安全" class="headerlink" title="二级指针不安全"></a>二级指针不安全</h2><ul>
-<li><p>例子</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> n = <span class="number">8</span>;<span class="comment">//本意是 n 的值不能改变</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * p1;</span><br><span class="line">p1 = &amp;n;</span><br><span class="line"><span class="keyword">int</span> ** pp2;</span><br><span class="line">pp2 = &amp;p1;     <span class="comment">//不安全，不能使用 const int **，初始化 int **pp2</span></span><br><span class="line"></span><br><span class="line">**pp2 = <span class="number">10</span>;    <span class="comment">//通过pp2修改到了n的值，违背本意。</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;n:%d\n&quot;</span>,n);</span><br></pre></td></tr></table></figure>
-
-<p>(Visual studio会自动检测这种情况从而不让编译通过，但是C语言本身是可以编译通过的,只是会有下面的警告)</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span>.c: 在函数‘main’中:</span><br><span class="line"><span class="keyword">new</span>.c:<span class="number">11</span>:<span class="number">8</span>: 警告：从不兼容的指针类型赋值 [-Wincompatible-pointer-types]</span><br><span class="line">  pp2 = &amp;p1;</span><br><span class="line">      ^</span><br><span class="line"><span class="keyword">new</span>.c:<span class="number">15</span>:<span class="number">4</span>: 警告：隐式声明函数‘system’ [-Wimplicit-function-declaration]</span><br><span class="line">  system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>gcc编译之后运行程序，结果n可以打印出来就是10</p>
-<p>小结：<strong>n 被 const 限定了，但是却可以通过二级指针绕过这个限定</strong>，所以二级指针在误用的情况下很不安全。</p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/03/C-const-md/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

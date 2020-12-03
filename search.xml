@@ -544,6 +544,8 @@
 
 </li>
 </ul>
+<a id="more"></a>
+
 <h2 id="补充一下：指针——也称为指针变量"><a href="#补充一下：指针——也称为指针变量" class="headerlink" title="补充一下：指针——也称为指针变量"></a>补充一下：指针——也称为<strong>指针变量</strong></h2><ul>
 <li><p>指针的使用</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> number = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;number ;   <span class="comment">//定义一个 int 类型的【指针变量】p  (* 号作为一个标识符，代表这是一个指针),然后 p 指向 number</span></span><br></pre></td></tr></table></figure>
